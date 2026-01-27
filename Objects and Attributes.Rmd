@@ -1,0 +1,57 @@
+---
+title: "R Data Types - Object & Attributes"
+output: html_notebook
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# **Atomic objects**
+
+1.  characters
+
+2.  numeric(real numbers)
+
+3.  intergers
+
+4.  complex
+
+5.  logical (True / False)
+
+El objeto mas basico es un vector.
+
+-   Un vector solo puede contener objetos de la misma clase.
+-   Una lista, es representada como un vector pero esta si puede
+    contener objetos de diferentes clases.
+
+Para crear un vector vacio, se utiliza la funcion `vector()`
+
+# Números
+
+-   Los numeros son tratados como objetos numericos. (son numeros reales
+    de doble precision).
+
+-   Si se quiere un entero hay q especificar con el sufijo `L`, por
+    ejemplo `1L` seria el valor entero.
+
+-   **Numeros especiales**:
+
+    -   `Inf`: Infinito.
+
+    -   `NaN`: Not a Number. Puede representar tambien un valor
+        faltante.
+
+# Atributos
+
+Los objetos pueden tener atributos como:
+
+-   nombres.
+
+-   dimensiones(matrices, arrays)
+
+-   tipo
+
+-   longitud
+
+Los atributos de un objeto se pueden visualizar con la siguiente funcion
+`attributes()`
