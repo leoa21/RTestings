@@ -1797,10 +1797,214 @@ valor faltante.</p></li>
 </ul>
 <p>Los atributos de un objeto se pueden visualizar con la siguiente
 funcion <code>attributes()</code></p>
+</div>
+<div id="vectores-y-listas" class="section level1">
+<h1>Vectores y listas</h1>
+<p>La funcion <code>c()</code> nos sirve para crear vectores de
+objetos.</p>
+<ul>
+<li><p><strong>Numeric.</strong>
+<code>x &lt;- c(0.5, 0.6)</code></p></li>
+<li><p><strong>Logic.</strong>
+<code>x &lt;- c(TRUE, FALSE), X &lt;- c(T, F)</code></p></li>
+<li><p><strong>Caracter.</strong>
+<code>x &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)</code></p></li>
+<li><p><strong>Entero.</strong> <code>x &lt;- 9:29</code></p></li>
+<li><p><strong>Complejos.</strong>
+<code>x &lt;- c(1+0i, 2+4i)</code></p></li>
+</ul>
+<p>Tambien se pueden crear con la funcion <code>vector()</code></p>
+<p><code>x &lt;- vector(&quot;numeric&quot;, 10)</code></p>
+<div id="coercion-explicita." class="section level3">
+<h3>Coercion explicita.</h3>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVYRzU0SUR3dElEQTZObHh1WEc1amJHRnpjeWg0S1Z4dVlHQmdJbjA9IC0tPlxuXG5gYGByXG5cbnggPC0gMDo2XG5cbmNsYXNzKHgpXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG54IDwtIDA6NlxuXG5jbGFzcyh4KVxuYGBgIn0= -->
+<pre class="r"><code>
+x &lt;- 0:6
+
+class(x)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiaW50ZWdlclwiXG4ifQ== -->
+<pre><code>[1] &quot;integer&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVZWE11Ym5WdFpYSnBZeWg0S1Z4dVlHQmdJbjA9IC0tPlxuXG5gYGByXG5hcy5udW1lcmljKHgpXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXMubnVtZXJpYyh4KVxuYGBgIn0= -->
+<pre class="r"><code>as.numeric(x)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAgMSAyIDMgNCA1IDZcbiJ9 -->
+<pre><code>[1] 0 1 2 3 4 5 6</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVZWE11Ykc5bmFXTmhiQ2g0S1Z4dVlHQmdJbjA9IC0tPlxuXG5gYGByXG5hcy5sb2dpY2FsKHgpXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXMubG9naWNhbCh4KVxuYGBgIn0= -->
+<pre class="r"><code>as.logical(x)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIEZBTFNFICBUUlVFICBUUlVFICBUUlVFICBUUlVFICBUUlVFICBUUlVFXG4ifQ== -->
+<pre><code>[1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVZWE11WTJoaGNtRmpkR1Z5S0hncFhHNWdZR0FpZlE9PSAtLT5cblxuYGBgclxuYXMuY2hhcmFjdGVyKHgpXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXMuY2hhcmFjdGVyKHgpXG5gYGAifQ== -->
+<pre class="r"><code>as.character(x)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiMFwiIFwiMVwiIFwiMlwiIFwiM1wiIFwiNFwiIFwiNVwiIFwiNlwiXG4ifQ== -->
+<pre><code>[1] &quot;0&quot; &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot; &quot;6&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="listas" class="section level2">
+<h2>Listas</h2>
+<p>Las listas son un tipo de vectores que pueden contener diferentes
+tipos de objetos.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVlQ0E4TFNCc2FYTjBLREVzSUZ3aVlWd2lMQ0JVVWxWRkxDQXhLelJwS1Z4dWVGeHVZR0JnSW4wPSAtLT5cblxuYGBgclxueCA8LSBsaXN0KDEsIFwiYVwiLCBUUlVFLCAxKzRpKVxueFxuYGBgXG5cbjwhLS0gcm5iLXNvdXJjZS1lbmQgLS0+XG4ifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueCA8LSBsaXN0KDEsIFwiYVwiLCBUUlVFLCAxKzRpKVxueFxuYGBgIn0= -->
+<pre class="r"><code>x &lt;- list(1, &quot;a&quot;, TRUE, 1+4i)
+x</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cblsxXSAxXG5cbltbMl1dXG5bMV0gXCJhXCJcblxuW1szXV1cblsxXSBUUlVFXG5cbltbNF1dXG5bMV0gMSs0aVxuIn0= -->
+<pre><code>[[1]]
+[1] 1
+
+[[2]]
+[1] &quot;a&quot;
+
+[[3]]
+[1] TRUE
+
+[[4]]
+[1] 1+4i</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVlRnRiTWwxZFhHNWdZR0FpZlE9PSAtLT5cblxuYGBgclxueFtbMl1dXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueFtbMl1dXG5gYGAifQ== -->
+<pre class="r"><code>x[[2]]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYVwiXG4ifQ== -->
+<pre><code>[1] &quot;a&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="matrices" class="section level2">
+<h2>Matrices</h2>
+<p>Son un tipo de vectores con atributos de dimension.
+<code>(nrow, ncol)</code></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHViU0E4TFNCdFlYUnlhWGdvYm5KdmR5QTlJRElzSUc1amIyd2dQU0F6S1Z4dWJWeHVZR0JnSW4wPSAtLT5cblxuYGBgclxubSA8LSBtYXRyaXgobnJvdyA9IDIsIG5jb2wgPSAzKVxubVxuYGBgXG5cbjwhLS0gcm5iLXNvdXJjZS1lbmQgLS0+XG4ifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubSA8LSBtYXRyaXgobnJvdyA9IDIsIG5jb2wgPSAzKVxubVxuYGBgIn0= -->
+<pre class="r"><code>m &lt;- matrix(nrow = 2, ncol = 3)
+m</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXVxuWzEsXSAgIE5BICAgTkEgICBOQVxuWzIsXSAgIE5BICAgTkEgICBOQVxuIn0= -->
+<pre><code>     [,1] [,2] [,3]
+[1,]   NA   NA   NA
+[2,]   NA   NA   NA</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVaR2x0S0cwcElDTkVhVzFsYm5OcGIyNGdaR1VnYkdFZ2JXRjBjbWw2WEc1Z1lHQWlmUT09IC0tPlxuXG5gYGByXG5kaW0obSkgI0RpbWVuc2lvbiBkZSBsYSBtYXRyaXpcbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGltKG0pICNEaW1lbnNpb24gZGUgbGEgbWF0cml6XG5gYGAifQ== -->
+<pre class="r"><code>dim(m) #Dimension de la matriz</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIgM1xuIn0= -->
+<pre><code>[1] 2 3</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVZWFIwY21saWRYUmxjeWh0S1Z4dVlHQmdJbjA9IC0tPlxuXG5gYGByXG5hdHRyaWJ1dGVzKG0pXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXR0cmlidXRlcyhtKVxuYGBgIn0= -->
+<pre class="r"><code>attributes(m)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiJGRpbVxuWzFdIDIgM1xuIn0= -->
+<pre><code>$dim
+[1] 2 3</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Las matrices se llenan por columna.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHViU0E4TFNCdFlYUnlhWGdvTVRvMkxDQnVjbTkzSUQwZ01pd2dibU52YkNBOUlETXBYRzV0WEc1Z1lHQWlmUT09IC0tPlxuXG5gYGByXG5tIDwtIG1hdHJpeCgxOjYsIG5yb3cgPSAyLCBuY29sID0gMylcbm1cbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubSA8LSBtYXRyaXgoMTo2LCBucm93ID0gMiwgbmNvbCA9IDMpXG5tXG5gYGAifQ== -->
+<pre class="r"><code>m &lt;- matrix(1:6, nrow = 2, ncol = 3)
+m</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXVxuWzEsXSAgICAxICAgIDMgICAgNVxuWzIsXSAgICAyICAgIDQgICAgNlxuIn0= -->
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    3    5
+[2,]    2    4    6</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Primero toma la posicion (1, 1), luego la (1, 2)… etc</p>
+<p>Tambien se pueden crear directamente desde vectores añadiendo el
+atributo de dimension.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHViU0E4TFNBeE9qRXdYRzV0WEc1Z1lHQWlmUT09IC0tPlxuXG5gYGByXG5tIDwtIDE6MTBcbm1cbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubSA8LSAxOjEwXG5tXG5gYGAifQ== -->
+<pre class="r"><code>m &lt;- 1:10
+m</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMSAgMiAgMyAgNCAgNSAgNiAgNyAgOCAgOSAxMFxuIn0= -->
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVaR2x0S0cwcElEd3RJR01vTWl3Z05TbGNibTFjYm1CZ1lDSjkgLS0+XG5cbmBgYHJcbmRpbShtKSA8LSBjKDIsIDUpXG5tXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGltKG0pIDwtIGMoMiwgNSlcbm1cbmBgYCJ9 -->
+<pre class="r"><code>dim(m) &lt;- c(2, 5)
+m</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXSBbLDRdIFssNV1cblsxLF0gICAgMSAgICAzICAgIDUgICAgNyAgICA5XG5bMixdICAgIDIgICAgNCAgICA2ICAgIDggICAxMFxuIn0= -->
+<pre><code>     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    3    5    7    9
+[2,]    2    4    6    8   10</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Otra manera es crearlas a partir de vectores individuales, podemos
+bindear estos vectores por columnas o por filas.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVlQ0E4TFNBeE9qTmNibmtnUEMwZ01UQTZNVEpjYmx4dVkySnBibVFvZUN3Z2VTa2dJMk52YkhWdGJpQmlhVzVrWEc1Z1lHQWlmUT09IC0tPlxuXG5gYGByXG54IDwtIDE6M1xueSA8LSAxMDoxMlxuXG5jYmluZCh4LCB5KSAjY29sdW1uIGJpbmRcbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueCA8LSAxOjNcbnkgPC0gMTA6MTJcblxuY2JpbmQoeCwgeSkgI2NvbHVtbiBiaW5kXG5gYGAifQ== -->
+<pre class="r"><code>x &lt;- 1:3
+y &lt;- 10:12
+
+cbind(x, y) #column bind</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICB4ICB5XG5bMSxdIDEgMTBcblsyLF0gMiAxMVxuWzMsXSAzIDEyXG4ifQ== -->
+<pre><code>     x  y
+[1,] 1 10
+[2,] 2 11
+[3,] 3 12</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVjbUpwYm1Rb2VDd2dlU2tnSTNKdmR5QmlhVzVrWEc1Z1lHQWlmUT09IC0tPlxuXG5gYGByXG5yYmluZCh4LCB5KSAjcm93IGJpbmRcbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmJpbmQoeCwgeSkgI3JvdyBiaW5kXG5gYGAifQ== -->
+<pre class="r"><code>rbind(x, y) #row bind</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICBbLDFdIFssMl0gWywzXVxueCAgICAxICAgIDIgICAgM1xueSAgIDEwICAgMTEgICAxMlxuIn0= -->
+<pre><code>  [,1] [,2] [,3]
+x    1    2    3
+y   10   11   12</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+</div>
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgRGF0YSBUeXBlcyAtIE9iamVjdCAmIEF0dHJpYnV0ZXMiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCmVkaXRvcl9vcHRpb25zOiANCiAgbWFya2Rvd246IA0KICAgIHdyYXA6IDcyDQotLS0NCg0KIyAqKkF0b21pYyBvYmplY3RzKioNCg0KMS4gIGNoYXJhY3RlcnMNCg0KMi4gIG51bWVyaWMocmVhbCBudW1iZXJzKQ0KDQozLiAgaW50ZXJnZXJzDQoNCjQuICBjb21wbGV4DQoNCjUuICBsb2dpY2FsIChUcnVlIC8gRmFsc2UpDQoNCkVsIG9iamV0byBtYXMgYmFzaWNvIGVzIHVuIHZlY3Rvci4NCg0KLSAgIFVuIHZlY3RvciBzb2xvIHB1ZWRlIGNvbnRlbmVyIG9iamV0b3MgZGUgbGEgbWlzbWEgY2xhc2UuDQotICAgVW5hIGxpc3RhLCBlcyByZXByZXNlbnRhZGEgY29tbyB1biB2ZWN0b3IgcGVybyBlc3RhIHNpIHB1ZWRlDQogICAgY29udGVuZXIgb2JqZXRvcyBkZSBkaWZlcmVudGVzIGNsYXNlcy4NCg0KUGFyYSBjcmVhciB1biB2ZWN0b3IgdmFjaW8sIHNlIHV0aWxpemEgbGEgZnVuY2lvbiBgdmVjdG9yKClgDQoNCiMgTsO6bWVyb3MNCg0KLSAgIExvcyBudW1lcm9zIHNvbiB0cmF0YWRvcyBjb21vIG9iamV0b3MgbnVtZXJpY29zLiAoc29uIG51bWVyb3MgcmVhbGVzDQogICAgZGUgZG9ibGUgcHJlY2lzaW9uKS4NCg0KLSAgIFNpIHNlIHF1aWVyZSB1biBlbnRlcm8gaGF5IHEgZXNwZWNpZmljYXIgY29uIGVsIHN1ZmlqbyBgTGAsIHBvcg0KICAgIGVqZW1wbG8gYDFMYCBzZXJpYSBlbCB2YWxvciBlbnRlcm8uDQoNCi0gICAqKk51bWVyb3MgZXNwZWNpYWxlcyoqOg0KDQogICAgLSAgIGBJbmZgOiBJbmZpbml0by4NCg0KICAgIC0gICBgTmFOYDogTm90IGEgTnVtYmVyLiBQdWVkZSByZXByZXNlbnRhciB0YW1iaWVuIHVuIHZhbG9yDQogICAgICAgIGZhbHRhbnRlLg0KDQojIEF0cmlidXRvcw0KDQpMb3Mgb2JqZXRvcyBwdWVkZW4gdGVuZXIgYXRyaWJ1dG9zIGNvbW86DQoNCi0gICAgbm9tYnJlcy4NCg0KLSAgIGRpbWVuc2lvbmVzKG1hdHJpY2VzLCBhcnJheXMpDQoNCi0gICB0aXBvDQoNCi0gICBsb25naXR1ZA0KDQpMb3MgYXRyaWJ1dG9zIGRlIHVuIG9iamV0byBzZSBwdWVkZW4gdmlzdWFsaXphciBjb24gbGEgc2lndWllbnRlIGZ1bmNpb24NCmBhdHRyaWJ1dGVzKClgDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgRGF0YSBUeXBlcyAtIE9iamVjdCAmIEF0dHJpYnV0ZXMiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCmVkaXRvcl9vcHRpb25zOiANCiAgbWFya2Rvd246IA0KICAgIHdyYXA6IDcyDQotLS0NCg0KIyAqKkF0b21pYyBvYmplY3RzKioNCg0KMS4gIGNoYXJhY3RlcnMNCg0KMi4gIG51bWVyaWMocmVhbCBudW1iZXJzKQ0KDQozLiAgaW50ZXJnZXJzDQoNCjQuICBjb21wbGV4DQoNCjUuICBsb2dpY2FsIChUcnVlIC8gRmFsc2UpDQoNCkVsIG9iamV0byBtYXMgYmFzaWNvIGVzIHVuIHZlY3Rvci4NCg0KLSAgIFVuIHZlY3RvciBzb2xvIHB1ZWRlIGNvbnRlbmVyIG9iamV0b3MgZGUgbGEgbWlzbWEgY2xhc2UuDQotICAgVW5hIGxpc3RhLCBlcyByZXByZXNlbnRhZGEgY29tbyB1biB2ZWN0b3IgcGVybyBlc3RhIHNpIHB1ZWRlDQogICAgY29udGVuZXIgb2JqZXRvcyBkZSBkaWZlcmVudGVzIGNsYXNlcy4NCg0KUGFyYSBjcmVhciB1biB2ZWN0b3IgdmFjaW8sIHNlIHV0aWxpemEgbGEgZnVuY2lvbiBgdmVjdG9yKClgDQoNCiMgTsO6bWVyb3MNCg0KLSAgIExvcyBudW1lcm9zIHNvbiB0cmF0YWRvcyBjb21vIG9iamV0b3MgbnVtZXJpY29zLiAoc29uIG51bWVyb3MgcmVhbGVzDQogICAgZGUgZG9ibGUgcHJlY2lzaW9uKS4NCg0KLSAgIFNpIHNlIHF1aWVyZSB1biBlbnRlcm8gaGF5IHEgZXNwZWNpZmljYXIgY29uIGVsIHN1ZmlqbyBgTGAsIHBvcg0KICAgIGVqZW1wbG8gYDFMYCBzZXJpYSBlbCB2YWxvciBlbnRlcm8uDQoNCi0gICAqKk51bWVyb3MgZXNwZWNpYWxlcyoqOg0KDQogICAgLSAgIGBJbmZgOiBJbmZpbml0by4NCg0KICAgIC0gICBgTmFOYDogTm90IGEgTnVtYmVyLiBQdWVkZSByZXByZXNlbnRhciB0YW1iaWVuIHVuIHZhbG9yDQogICAgICAgIGZhbHRhbnRlLg0KDQojIEF0cmlidXRvcw0KDQpMb3Mgb2JqZXRvcyBwdWVkZW4gdGVuZXIgYXRyaWJ1dG9zIGNvbW86DQoNCi0gICBub21icmVzLg0KDQotICAgZGltZW5zaW9uZXMobWF0cmljZXMsIGFycmF5cykNCg0KLSAgIHRpcG8NCg0KLSAgIGxvbmdpdHVkDQoNCkxvcyBhdHJpYnV0b3MgZGUgdW4gb2JqZXRvIHNlIHB1ZWRlbiB2aXN1YWxpemFyIGNvbiBsYSBzaWd1aWVudGUgZnVuY2lvbg0KYGF0dHJpYnV0ZXMoKWANCg0KIyBWZWN0b3JlcyB5IGxpc3Rhcw0KDQpMYSBmdW5jaW9uIGBjKClgIG5vcyBzaXJ2ZSBwYXJhIGNyZWFyIHZlY3RvcmVzIGRlIG9iamV0b3MuDQoNCi0gICAqKk51bWVyaWMuKiogYHggPC0gYygwLjUsIDAuNilgDQoNCi0gICAqKkxvZ2ljLioqIGB4IDwtIGMoVFJVRSwgRkFMU0UpLCBYIDwtIGMoVCwgRilgDQoNCi0gICAqKkNhcmFjdGVyLioqIGB4IDwtIGMoImEiLCAiYiIsICJjIilgDQoNCi0gICAqKkVudGVyby4qKiBgeCA8LSA5OjI5YA0KDQotICAgKipDb21wbGVqb3MuKiogYHggPC0gYygxKzBpLCAyKzRpKWANCg0KVGFtYmllbiBzZSBwdWVkZW4gY3JlYXIgY29uIGxhIGZ1bmNpb24gYHZlY3RvcigpYA0KDQpgeCA8LSB2ZWN0b3IoIm51bWVyaWMiLCAxMClgDQoNCiMjIyBDb2VyY2lvbiBleHBsaWNpdGEuIA0KDQpgYGB7cn0NCg0KeCA8LSAwOjYNCg0KY2xhc3MoeCkNCg0KYXMubnVtZXJpYyh4KQ0KDQphcy5sb2dpY2FsKHgpDQoNCmFzLmNoYXJhY3Rlcih4KQ0KYGBgDQoNCiMjIExpc3Rhcw0KDQpMYXMgbGlzdGFzIHNvbiB1biB0aXBvIGRlIHZlY3RvcmVzIHF1ZSBwdWVkZW4gY29udGVuZXIgZGlmZXJlbnRlcyB0aXBvcw0KZGUgb2JqZXRvcy4NCg0KYGBge3J9DQp4IDwtIGxpc3QoMSwgImEiLCBUUlVFLCAxKzRpKQ0KeA0KDQp4W1syXV0gI1BhcmEgYWNjZWRlciBhIHVuIGVsZW1lbnRvIHNlIHV0aWxpemEgZG9ibGUgYnJhY2tldA0KYGBgDQoNCiMjIE1hdHJpY2VzDQoNClNvbiB1biB0aXBvIGRlIHZlY3RvcmVzIGNvbiBhdHJpYnV0b3MgZGUgZGltZW5zaW9uLiBgKG5yb3csIG5jb2wpYA0KDQpgYGB7cn0NCm0gPC0gbWF0cml4KG5yb3cgPSAyLCBuY29sID0gMykNCm0NCg0KZGltKG0pICNEaW1lbnNpb24gZGUgbGEgbWF0cml6DQphdHRyaWJ1dGVzKG0pDQpgYGANCg0KTGFzIG1hdHJpY2VzIHNlIGxsZW5hbiBwb3IgY29sdW1uYS4NCg0KYGBge3J9DQptIDwtIG1hdHJpeCgxOjYsIG5yb3cgPSAyLCBuY29sID0gMykNCm0NCmBgYA0KDQpQcmltZXJvIHRvbWEgbGEgcG9zaWNpb24gKDEsIDEpLCBsdWVnbyBsYSAoMSwgMikuLi4gZXRjDQoNClRhbWJpZW4gc2UgcHVlZGVuIGNyZWFyIGRpcmVjdGFtZW50ZSBkZXNkZSB2ZWN0b3JlcyBhw7FhZGllbmRvIGVsDQphdHJpYnV0byBkZSBkaW1lbnNpb24uDQoNCmBgYHtyfQ0KbSA8LSAxOjEwDQptDQpkaW0obSkgPC0gYygyLCA1KQ0KbQ0KYGBgDQoNCk90cmEgbWFuZXJhIGVzIGNyZWFybGFzIGEgcGFydGlyIGRlIHZlY3RvcmVzIGluZGl2aWR1YWxlcywgcG9kZW1vcw0KYmluZGVhciBlc3RvcyB2ZWN0b3JlcyBwb3IgY29sdW1uYXMgbyBwb3IgZmlsYXMuDQoNCmBgYHtyfQ0KeCA8LSAxOjMNCnkgPC0gMTA6MTINCg0KY2JpbmQoeCwgeSkgI2NvbHVtbiBiaW5kDQoNCnJiaW5kKHgsIHkpICNyb3cgYmluZA0KDQoNCmBgYA0K</div>
 
 
 
