@@ -74,7 +74,7 @@ Tambien se pueden crear con la funcion `vector()`
 
 `x <- vector("numeric", 10)`
 
-### Coercion explicita. 
+### Coercion explicita.
 
 ```{r}
 
@@ -144,4 +144,43 @@ cbind(x, y) #column bind
 rbind(x, y) #row bind
 
 
+```
+
+## Factors
+
+Los factores son utilizados para representar valores categoricos. Pueden
+ser ordenados o desordenados.
+
+Se pueden pensar como un vector de enteros pero donde cada valor entero
+tiene una etiqueta.
+
+Ejemplo.
+
+-   `x <- ("Male", "Female", "Male")`
+
+-   `x <- ("0", "1", "0")` Este vector seria como la version numerica
+    del vector de arriba.
+
+To know more [click
+here](https://www.geeksforgeeks.org/r-language/r-factors/)
+
+```{r}
+x <- factor(c("yes", "yes", "no", "yes", "no"))
+x #Me imprime los niveles del factor, es decir las categorias q existen. 
+
+table(x) #Me indica la frecuencia de cada categoria
+
+
+#unclass, elimina la clase de un vector. 
+unclass(x) #despues de ejecutar unclass, se reducira a un vector de enteros
+```
+
+El orden de la categorias es importante para modelos lineales ya que el
+primer nivel es usado como nivel base. En este caso, de la siguiente
+manera podemos indicar cual será el orden de las categorias.
+
+```{r}
+x <- factor(c("yes", "yes", "no", "yes", "no"), 
+            levels = c("yes", "no"))
+x
 ```
