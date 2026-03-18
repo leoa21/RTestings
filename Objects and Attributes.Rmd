@@ -184,3 +184,78 @@ x <- factor(c("yes", "yes", "no", "yes", "no"),
             levels = c("yes", "no"))
 x
 ```
+
+## Missing values
+
+`NA` & `NaN`; `NaN` Not a Number, es el equivalente a un NULL para
+operaciones matematicas.
+
+```{r}
+
+x <- c(1,2,NA,10,3)
+
+#Evalua is hay valores NA en el vector
+is.na(x) 
+
+#Evalua si hay elementos Not a Numebr en el vector
+is.nan(x)
+
+x <- c(1,2,NaN, NA, 4)
+
+is.na(x) 
+
+is.nan(x) #Un NaN puede ser un NA pero un NA no puede ser un NaN
+```
+
+## Dataframes
+
+-   Pueden ser creados con los metodos:
+
+    -   `read.table()` o `read.csv()`
+
+-   Se pueden convertir a matrices con:
+
+    -   `data.matrix()`
+
+    -   Pero todos los elementos deben del mismo tipo sino tratara de
+        convertir todos los elementos a un mismo tipo.
+
+```{r}
+x <- data.frame(foo = 1:4, bar = c(T, T, F, F))
+
+x
+
+nrow(x)
+ncol(x)
+```
+
+## Names 
+
+Los objetos en R pueden tener nombres, ayudando a que el codigo sea
+facil de leer y autodescriptivo.
+
+```{r}
+x <- 1:3
+
+names(x) #Una secuencia de numeros no tiene nombres por si misma
+
+names(x) <- c("foo", "bar", "norf") #Estamos asignando un vector con nombres
+x
+
+names(x)
+```
+
+Las listas tambien pueden tener names
+
+```{r}
+x <- list(a = 1, b= 2, c= 3)
+x
+```
+
+Y las matrices
+
+```{r}
+m <- matrix(1:4, nrow = 2, ncol= 2) #Matriz 2x2 con una serie de numeros del 1 al 4 
+dimnames(m) <- list(c("a", "b"), c("c", "d")) #Asignamos los nombres con una lista q tiene vectores con los nombres de las filas y columnas
+m
+```
