@@ -229,7 +229,7 @@ nrow(x)
 ncol(x)
 ```
 
-## Names 
+## Names
 
 Los objetos en R pueden tener nombres, ayudando a que el codigo sea
 facil de leer y autodescriptivo.
@@ -258,4 +258,60 @@ Y las matrices
 m <- matrix(1:4, nrow = 2, ncol= 2) #Matriz 2x2 con una serie de numeros del 1 al 4 
 dimnames(m) <- list(c("a", "b"), c("c", "d")) #Asignamos los nombres con una lista q tiene vectores con los nombres de las filas y columnas
 m
+```
+
+## Reading Tabular Data
+
+Funciones principales para leer data en R
+
+-   Leer data tabular `read.table, read.csv`
+
+-   Leer lineas de un archivo de texto
+    `readLines -> Te regresa un vector de caracteres`
+
+-   Leer codigo de archivos R(inverso de dump) `source`
+
+-   Leer archivos R que ya han sido procesado por archivos de texto
+    `dget`
+
+-   Leer objetos binarios `load / unserialize`
+
+### Parametros de read.table
+
+1.  Nombre del archivo o la conexion: `file`
+2.  Indica si el archivo tiene un header, es un booleano por si queremos
+    que lo tome en cuenta al momento de leer: `header`
+3.  Un string que indica como estan separadas las columnas: `sep`
+4.  Es un vector de caracteres que indica a q clase le corresponde cada
+    columna del dataset `colClasses`
+    1.  Ej. La primer columna es string, la segunda logica y la tercera
+        un factor, etc
+5.  Numero de filas en el dataset `nrows`
+6.  El numero de linear que se saltara desde el principio del dataset
+    `skip`
+    1.  Ej. Puede que haya algun encabezado o alguna region que no
+        contenga datos y lo quieras omitir
+
+Se puede utilizar el read.table sin parametros
+
+```{r}
+data <- read.table("foo.txt")
+```
+
+R automaticamente
+
+-   Se saltara las lineas que empiecen con un \#
+
+-   Se dara cuenta de cuantas filas hay en el archivo y cuanta memoria
+    necesita reservarse
+
+-   Se dara cuenta del tipo de variable de cada columna
+
+-   `read.csv`
+
+```{r}
+df <- read.csv("C:\\Users\\lza01\\Downloads\\quiz1_data\\hw1_data.csv")
+
+df[[],[2]]
+
 ```
