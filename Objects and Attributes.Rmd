@@ -312,6 +312,53 @@ R automaticamente
 ```{r}
 df <- read.csv("C:\\Users\\lza01\\Downloads\\quiz1_data\\hw1_data.csv")
 
-df[[],[2]]
+
+df2 <- df['Ozone' > 31 & 'Temp' > 90]
+
+solarR <- df2$Solar.R[!is.na(df2$Solar.R)]
+
+prom <- sum(solarR) / length(solarR)
+
+
+june <- df['Month' == 6]
+june
+
+
+```
+
+```{r}
+
+df <- read.csv("C:\\Users\\lza01\\Downloads\\quiz1_data\\hw1_data.csv")
+
+june <- df[df$Month == 6, ]
+
+temp <- june$Temp[!is.nan(june$Temp)]
+
+prom <- sum(temp) / length(temp)
+
+prom
+
+
+
+
+
+```
+
+``` r
+```
+
+```{r}
+
+df <- read.csv("C:\\Users\\lza01\\Downloads\\quiz1_data\\hw1_data.csv")
+
+may <- df[df$Month == 5, ]
+
+may
+ozone <- may$Ozone[!is.na(may$Ozone)]
+
+print(max(ozone))
+
+
+
 
 ```
